@@ -9,7 +9,7 @@ Author: Georges Monette [aut, cre],
   Heather Krause [aut],
   Fan Zhu [ctb]
 Maintainer: Georges Monette <georges@yorku.ca>
-Description: Collection of utility functions for linear and mixed models
+Description: A collection of utility functions for linear and mixed models
     including wald: Wald test with functions to generate hypothesis matrices gsp:
     general spline with any degree and smoothness with additional function 'sc' to
     contruct linear hypotheses, capply: create contextual variables. Also: cvar,
@@ -18,9 +18,11 @@ Description: Collection of utility functions for linear and mixed models
 License: GPL (>= 2)
 LazyLoad: yes
 LazyData: yes
+License: file LICENSE
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 Imports: stats, nlme, lattice, latticeExtra, lme4, magrittr, RColorBrewer, naniar, UpSetR
+Depends: R (>= 3.5.0)
 Suggests: 
     knitr,
     rmarkdown,

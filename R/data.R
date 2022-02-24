@@ -36,6 +36,7 @@
 #'   xqplot( up( hsfull, ~ school) )
 #' }
 "hsfull"
+
 #' Longitudinal study of IQ after traumatic brain injuries
 #'
 #' A subset of data gathered on
@@ -57,6 +58,7 @@
 #' @references Wong, Monette, Wiener COMPLETE
 #' @keywords datasets
 "iq"
+
 #' Monthly unemployment data in the U.S. from 1995-01-01 to 2019-02-01
 #' 
 #' @format A data set with 290 rows an two variables:
@@ -66,6 +68,7 @@
 #'   }
 #' @keywords datasets
 "Unemp"
+
 #' Copy Monthly unemployment data in the U.S. from 1995-01-01 to 2019-02-01
 #' 
 #' @format A data set with 290 rows an two variables:
@@ -75,13 +78,14 @@
 #'   }
 #' @keywords datasets
 "Unemp2"
+
 #' Florida state death penalty data
 #' 
 #' Dataset detailing death penalty 674 homicide trials in the
 #' state of Florida from 1976-1987 with respect to verdict, and
 #' victim and defendant race. The data were previously used
 #' (Agresti 2012) to demonstrate Simpson's Paradox. This
-#' dataset was obtained from the \code{\link{asbio}} package.
+#' dataset was obtained from the \pkg{asbio} package.
 #' 
 #' A reversal of associations or comparisons may occur as a
 #' result of lurking variables or aggregating groups. This is
@@ -101,13 +105,14 @@
 #' Simpson, E. H. (1951) The Interpretation of interaction in contingency tables. Journal of the Royal Statistical Society Ser. B 13: 238-241.
 #' @keywords datasets
 "death.penalty"
+
 #' Florida state death penalty data 1976-1987
 #' 
 #' Dataset detailing death penalty 674 homicide trials in the
 #' state of Florida from 1976-1987 with respect to verdict, and
 #' victim and defendant race. The data were previously used
 #' (Agresti 2012) to demonstrate Simpson's Paradox. This
-#' dataset was obtained from the \code{\link{asbio}} package.
+#' dataset was obtained from the \pkg{asbio} package.
 #' 
 #' A reversal of associations or comparisons may occur as a
 #' result of lurking variables or aggregating groups. This is

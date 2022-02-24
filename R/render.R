@@ -5,7 +5,7 @@
 #' document with output YAML \code{output: html_document}.
 #' 
 #' @param input file to be rendered
-#' @param ... other arguments passed to \code{\link{rmarkdown::render}}.
+#' @param ... other arguments passed to \code{\link[rmarkdown]{render}}.
 #' @export
 render_keep <- function(input, ...) {
   rmarkdown::render(input, clean = FALSE, envir = new.env(), ...)

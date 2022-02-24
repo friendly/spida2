@@ -6,15 +6,19 @@
 #' @param \dots additional arguments (currently not used)
 #' @export
 labs <- function(x,...) UseMethod("labs")
+
 #' @rdname labs
 #' @export
 labs.default <- function(x,...) names(dimnames(x))
+
 #' @rdname labs
 #' @export
 labs.data.frame.lab <- function( x ,...) attr(x,"labs")
+
 #' @rdname labs
 #' @export
 "labs<-" <- function(x,...) UseMethod("labs<-")
+
 #' @param digits to print
 #' @param quote (default FALSE) put quotes around strings
 #' @param right (default TRUE) justfication
@@ -41,6 +45,7 @@ print.data.frame.lab <-
     }
     invisible(x)
   }
+
 #' @rdname labs
 #' @export
 "[.data.frame.lab" <- function(x, ...){
@@ -49,17 +54,19 @@ print.data.frame.lab <-
   if( inherits(ret, "data.frame")) labs(ret) <- lab
   ret
 }
+
 #' @rdname labs
 #' @export
-"labs<-.data.frame" <- function( x, value ) {
+"labs<-.data.frame" <- function( x, value, ... ) {
   value <- c( value, "", "") [ 1:2 ]
   attr(x,"labs") <- value
   if( !inherits(x,"data.frame.lab")) class(x) <- c( "data.frame.lab", class(x))
   x
 }
+
 #' @rdname labs
 #' @export
-"labs<-.default" <- function(x, value) {
+"labs<-.default" <- function(x, value, ...) {
   nd <- length(dim(x))
   value <- c( value, rep("",nd))[1:nd]
   names(dimnames(x)) <- value

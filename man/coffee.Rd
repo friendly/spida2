@@ -23,17 +23,18 @@ Artifical data on 20 subjects to illustrate issues of causality with observation
     \item{\code{Stress2}}{Index of stress that is less reliable than 'Stress'}
   }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the __description__ above ~~
-}
+%}
 %\source{
 %%  ~~ reference to a publication or URL from which the data were obtained ~~
 %}
-\references{
+%\references{
 %%  ~~ possibly secondary sources and usages ~~
-}
+%}
 \examples{
 data(coffee)
-## maybe str(coffee) ; plot(coffee) ...
+plot(Heart ~ Stress, data=coffee)
+abline(lm(Heart ~ Stress, data=coffee), lwd=2, col="red")
 }
 \keyword{datasets}

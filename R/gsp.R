@@ -172,12 +172,12 @@
 #' matrix and ensuing numerical problems.
 #' @author Monette, G. \email{georges@@yorku.ca}
 #' @seealso \code{\link[spida2]{wald}} \code{\link[spida2]{sc}}
-#' @references %% ~put references to the literature/web site here ~
-#' @keywords ~kwd1 ~kwd2
 #' @examples 
 #' ## Fitting a quadratic spline
-#' simd <- data.frame( age = rep(1:50, 2), y = sin(2*pi*(1:100)/5) + rnorm(100),
-#'           G = rep( c('male','female'), c(50,50)))
+#' simd <- data.frame( age = rep(1:50, 2), 
+#'                     y = sin(2*pi*(1:100)/5) + rnorm(100),
+#'                     G = rep( c('male','female'), c(50,50)))
+#'                     
 #' # define a function generating the spline
 #' sp <- function(x) gsp( x, knots = c(10,25,40), degree = c(1,2,2,1),
 #'           smoothness = c(1,1,1))
@@ -190,8 +190,10 @@
 #' 
 #' ## Linear hypotheses
 #' L <- list( "Overall test of slopes at 20" = rbind(
-#'       "Female slope at age 20" =  c( F20 <- cbind( 0 , sc( sp, 20, D = 1), 0 , 0 * sc( sp, 20, D = 1))),
-#'       "Male slope at age 20" =  c( M20 <- cbind( 0 , sc( sp, 20, D = 1), 0 , 1 * sc( sp, 20, D = 1))),
+#'       "Female slope at age 20" =  
+#'          c(F20 <- cbind(0 , sc( sp, 20, D = 1), 0 , 0 * sc( sp, 20, D = 1))),
+#'       "Male slope at age 20" =  
+#'          c(M20 <- cbind(0 , sc( sp, 20, D = 1), 0 , 1 * sc( sp, 20, D = 1))),
 #'       "Difference" = c(M20 - F20))
 #'       )
 #' wald( fit, L)

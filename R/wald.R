@@ -106,12 +106,16 @@
 #'        full rank version of the hypothesis matrix.  'svd' has correctly identified
 #'        the rank of a large hypothesis matrix where 'qr' has failed.
 #' @param pars passed to \code{\link[rstan]{extract}} method for stanfit objects.
-#' @param include passed to \code{\link[rstan]{extract}} method for stanfit objects.
+#' ## @param include passed to \code{\link[rstan]{extract}} method for stanfit objects.
 #' @param overdispersion (default FALSE) if TRUE, adjust variance-covariance
 #'        estimate by multiplying by the overdispersion factor calculated
 #'        by \code{\link{overdisp_fun}}. If `overdisperion` is numerical, use
-#'        its value as an overdispersion factor.  
-#' @param help obsolete
+#'        its value as an overdispersion factor.
+#' @param df
+#' @param x
+#' @param fun
+#' @param label
+#' @param ... other arguments
 #' @return An object of class \code{wald}, with the following components:
 #'       COMPLETE
 #' @seealso \code{\link{Lform}},
@@ -132,7 +136,9 @@
 #'   summary(fit)
 #'   pred <- expand.grid( ses = seq(-2,2,.1), Sex = levels(hs$Sex), Sector = levels(hs$Sector))
 #'   pred
-#'   w <- wald(fit, getX(fit,data=pred)) # attaches data to wald.object so it can be included in data frame
+#'   
+#' # attach data to wald.object so it can be included in data frame   
+#'   w <- wald(fit, getX(fit,data=pred)) 
 #'   w <- wald(fit, pred = pred)
 #'   w <- as.data.frame(w)
 #'   head(w)
@@ -188,11 +194,15 @@
 wald <- 
   function(fit, Llist = "", clevel = 0.95,
            pred = NULL,
-           data = NULL, debug = FALSE , maxrows = 25,
+           data = NULL, 
+           debug = FALSE , maxrows = 25,
            full = FALSE, fixed = FALSE,
-           invert = FALSE, method = 'svd',
+           invert = FALSE, 
+           method = 'svd',
            overdispersion = FALSE,
-           df = NULL, pars = NULL,...) {
+           df = NULL, 
+           pars = NULL, 
+           ...) {
     # New version with support for stanfit
     if (full) return(wald(fit, getX(fit)))
     if(!is.null(pred)) return(wald(fit, getX(fit,pred)))
@@ -406,7 +416,13 @@ model.matrix(~ ses * Sex * Sector,data=pred)
 
 #' @describeIn wald experimental version with RHS?
 #' @export
-wald2 <- function(fit, Llist = "",clevel=0.95, data = NULL, debug = FALSE , maxrows = 25, full = FALSE, fixed = FALSE, invert = FALSE, method = 'svd',df = NULL, RHS = 0) {
+wald2 <- function(fit, 
+                  Llist = "",
+                  clevel=0.95, 
+                  data = NULL, 
+                  debug = FALSE, 
+                  maxrows = 25, 
+                  full = FALSE, fixed = FALSE, invert = FALSE, method = 'svd',df = NULL, RHS = 0) {
 # GM: 2015 08 11:  to do:
 #  Experimental version of wald with RHS
 # NEEDS to be restructured with

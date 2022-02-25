@@ -2,11 +2,51 @@
 % Please edit documentation in R/ell.R, R/ellipse.R
 \name{ell}
 \alias{ell}
+\alias{dell}
+\alias{ell.conj}
+\alias{ellpt}
+\alias{ellptc}
+\alias{elltanc}
+\alias{elltan}
+\alias{ellbox}
 \alias{ellplus}
+\alias{ellpts}
+\alias{ellptsc}
 \alias{dellplus}
 \title{Ellipses in 2D}
 \usage{
 ell(center = rep(0, 2), shape = diag(2), radius = 1, n = 100)
+
+dell(x, y, radius = 1, ..., na.rm = TRUE)
+
+ell.conj(center, shape, dir, radius = 1, len = 1)
+
+ellpt(ell, dir = c(0, 1), radius = 1)
+
+ellptc(ell, dir = c(0, 1), radius = 1)
+
+elltanc(ell, dir = c(0, 1), radius = 1, len = 1, v = c(-1, 1))
+
+elltan(ell, dir = c(0, 1), radius = 1, len = 1, v = c(-1, 1))
+
+ellbox(ell, dir = c(0, 1), radius = 1)
+
+ellplus(
+  center = rep(0, 2),
+  shape = diag(2),
+  radius = 1,
+  n = 100,
+  angles = (0:n) * 2 * pi/n,
+  fac = chol,
+  ellipse = all,
+  diameters = all,
+  box = all,
+  all = FALSE
+)
+
+ellpts(ell, dir = c(0, 1), radius = 1, len = 1, v = c(-1, 1))
+
+ellptsc(ell, dir = c(0, 1), radius = 1, len = 1, v = c(-1, 1))
 
 ellplus(
   center = rep(0, 2),
@@ -37,6 +77,12 @@ confidence ellipse).}
 
 \item{n}{Number of points on the unit circle used to calculate the ellipse}
 
+\item{x, y}{data values}
+
+\item{\dots}{arguments passed to \code{ellplus}}
+
+\item{na.rm}{remove missing data in forming data ellipse, default TRUE}
+
 \item{angles}{Angles around the unit circle used to calculate the ellipse}
 
 \item{fac}{A function defining the conjugate axes used to transform the unit
@@ -55,12 +101,6 @@ box should be returned}
 \item{all}{Logical to request all of \code{ellipse}, \code{diameters} and
 \code{box}. If \code{FALSE}, only the components specified separately by
 \code{ellipse}, \code{diameters} and \code{box} are returned.}
-
-\item{x, y}{data values}
-
-\item{\dots}{arguments passed to \code{ellplus}}
-
-\item{na.rm}{remove missing data in forming data ellipse, default TRUE}
 }
 \value{
 Returns a 2-column matrix of (X,Y) coordinates suitable for drawing

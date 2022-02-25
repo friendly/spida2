@@ -72,7 +72,7 @@
 #' ## The increase in income associated with an additional year of education
 #' ##
 #'
-#' data(Prestige)   # from library(car)
+#' data(Prestige, package="car")   # from library(car)
 #' fit <- lm( income ~ (education+I(education^2)) * type, Prestige)
 #' summary(fit)
 #' Lfx(fit)  # generates expression to cut and paste and differentiate
@@ -142,6 +142,7 @@
 #' zw <- as.data.frame( wald( fit2, Lcomp))
 #' zw
 #' @export
+
 Lfx <-
   function (fit, expr.list, data = getData(fit), prefix = "1 * ", wrap = FALSE, debug = FALSE)
   {

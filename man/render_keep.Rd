@@ -9,7 +9,7 @@ render_keep(input, ...)
 \arguments{
 \item{input}{file to be rendered}
 
-\item{...}{other arguments passed to \code{\link{rmarkdown::render}}.}
+\item{...}{other arguments passed to \code{\link[rmarkdown]{render}}.}
 }
 \description{
 Following https://github.com/rstudio/rmarkdown/issues/17 

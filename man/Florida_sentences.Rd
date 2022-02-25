@@ -22,7 +22,7 @@ Dataset detailing death penalty 674 homicide trials in the
 state of Florida from 1976-1987 with respect to verdict, and
 victim and defendant race. The data were previously used
 (Agresti 2012) to demonstrate Simpson's Paradox. This
-dataset was obtained from the \code{\link{asbio}} package.
+dataset was obtained from the \pkg{asbio} package.
 }
 \details{
 A reversal of associations or comparisons may occur as a

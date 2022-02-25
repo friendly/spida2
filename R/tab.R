@@ -45,7 +45,6 @@
 #' 
 #' Primarily used to strips totals from a table bordered by totals 
 #' by dropping the last facet. 
-#' The 
 #'
 #' @param arr array
 #' @param drop drop parameter in subsetting, default FALSE
@@ -79,6 +78,7 @@ dropLast <- function(arr, drop = FALSE, keep = NULL) {
   disp(call)
   do.call( `[`,call)
 }
+
 #' Drop last elements of an array if it is a "Total"
 #'
 #' Used to drop "Total" rows and columns after using \code{\link{tab}}. Synonyms for
@@ -152,6 +152,7 @@ dropLastTotal <- function (mat, names_to_drop = "Total", drop = FALSE) {
 #' round(Tab(titanic, Freq ~ Sex + Survived + Age,
 #'     pct = c(1,3), keep = ""),2)
 #' @export
+
 tab <- function(x,...) UseMethod("tab")
 #' @describeIn tab method class table
 #' @export

@@ -56,6 +56,7 @@ Xmat <- function( x, degree, D = 0, signif = 3) {
   colnames(G) = paste( "X", 0:(ncol(G)-1), sep = "")
   G
 }
+
 #' @export
 Xf <-  function(   x, knots, degree = 3, D = 0, right = TRUE , signif = 3) {
   
@@ -77,6 +78,8 @@ Xf <-  function(   x, knots, degree = 3, D = 0, right = TRUE , signif = 3) {
 # Xf( 3, c(3,6),right = F)
 
 #' @export
+#' @examples 
+#' Cmat( c(-.2,.4), c(2,3,2), c(2,2))
 Cmat <- function( knots, degree, smooth, lin = NULL, intercept = 0, signif = 3) {
   # add lin: contraints, GM 2013-06-13
   # generates constraint matrix
@@ -131,7 +134,7 @@ Cmat <- function( knots, degree, smooth, lin = NULL, intercept = 0, signif = 3) 
   
 }
 
-# Cmat( c(-.2,.4), c(2,3,2), c(2,2))
+# 
 
 
 #' @export

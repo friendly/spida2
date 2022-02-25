@@ -136,6 +136,7 @@
 #' @param n number of points on ellipse
 #' @param na.rm remove missing data in forming data ellipse, default TRUE
 #' 
+#' @rdname ell
 #' @export
 ell <- 
   function( center = c(0,0), shape = diag(2) , radius  = 1, n = 100) {
@@ -158,6 +159,7 @@ ell <-
     ret
   }
 
+#' @rdname ell
 #' @export
 dell <-
 function( x, y, radius = 1, ..., na.rm = TRUE) {
@@ -167,6 +169,8 @@ function( x, y, radius = 1, ..., na.rm = TRUE) {
         ell( apply(mat,2,mean,na.rm = na.rm), var(mat, na.rm = na.rm), radius = radius, ...)
     }
 
+
+#' @rdname ell
 #' @export
 ell.conj <-
 function( center, shape, dir, radius = 1, len = 1) {
@@ -227,7 +231,9 @@ function( object, u , radius = 1, ...) {
     }
 
 
-
+#'   Find a point on an ellipse in a particular direction specified by \code{dir}
+#'
+#' @rdname ell
 #' @export
 ellpt <- function(ell, dir = c(0,1) , radius = 1 ) {
    # point on an ellipse in a particular direction
@@ -241,6 +247,8 @@ ellpt <- function(ell, dir = c(0,1) , radius = 1 ) {
    t( ax %*% rbind(radius) + as.vector(p$center))               # returns a row for plotting
 }
 
+#'   Find a point on an ellipse in a conjugate direction specified by \code{dir}
+#' @rdname ell
 #' @export
 ellptc <- function(ell, dir = c(0,1) , radius = 1 ) {
    # point on an ellipse in a conjugate direction
@@ -252,6 +260,7 @@ ellptc <- function(ell, dir = c(0,1) , radius = 1 ) {
    t( ax %*% rbind(radius) + as.vector(p$center))               # returns a row for plotting
 }
 
+#' @rdname ell
 #' @export
 elltanc <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
        p <- attr(ell,'parms')
@@ -261,6 +270,7 @@ elltanc <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
        t( t(ax) -as.vector(p$center) + as.vector(pt))
 }
 
+#' @rdname ell
 #' @export
 elltan <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
        p <- attr(ell,'parms')
@@ -269,6 +279,7 @@ elltan <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
        t( t(ax) -as.vector(p$center) + as.vector(pt))
 }
 
+#' @rdname ell
 #' @export
 ellbox <- function( ell, dir = c(0,1) , radius = 1 ){
       rbind(
@@ -278,6 +289,7 @@ ellbox <- function( ell, dir = c(0,1) , radius = 1 ){
  elltanc( ell, dir = dir, radius = -radius) )
 }
 
+#' @rdname ell
 #' @export
 ellplus <-
 function (center = rep(0, 2), shape = diag(2), radius = 1, n = 100,
@@ -304,6 +316,7 @@ function (center = rep(0, 2), shape = diag(2), radius = 1, n = 100,
     do.call("rbindna", ret[c(ellipse, diameters, diameters, box)])
 }
 
+#' @rdname ell
 #' @export
 ellpts <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
   rbind(
@@ -314,6 +327,7 @@ ellpts <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
             v = radius * c(-1,0,1)))
 }
 
+#' @rdname ell
 #' @export
 ellptsc <- function( ell, dir = c(0,1), radius = 1, len = 1, v = c(-1,1)) {
   rbind(

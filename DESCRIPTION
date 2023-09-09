@@ -20,20 +20,24 @@ LazyLoad: yes
 LazyData: yes
 RoxygenNote: 7.2.3
 Encoding: UTF-8
-Imports: stats, 
-    nlme, 
-    lattice, 
-    latticeExtra, 
-    lme4, 
-    magrittr, 
-    RColorBrewer, 
-    naniar, 
-    UpSetR, 
-    MASS, 
-    Matrix
+Imports: 
+    stats,
+    nlme,
+    lattice,
+    latticeExtra,
+    lme4,
+    magrittr,
+    RColorBrewer,
+    naniar,
+    UpSetR,
+    MASS,
+    Matrix,
+    gplots
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 2.1.0)
 VignetteBuilder: knitr, rmarkdown
 Roxygen: list(markdown = TRUE)
+Depends: 
+    R (>= 3.5.0)

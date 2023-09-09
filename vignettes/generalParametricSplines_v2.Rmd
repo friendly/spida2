@@ -1,19 +1,27 @@
 ---
-title: "General Parametric Splines in carEx"
+title: "General Parametric Splines in carEx v.2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{generalParametricSplines_v2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 author: ""
 date: "`r Sys.Date()`"
-output: rmarkdown::pdf_document
-# bibliography: bib.bib
-# link-citations: yes
-vignette: >
-  %\VignetteIndexEntry{General Parametric Splines in carEx}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
+bibliography: bib.bib
+link-citations: yes
 editor_options: 
   chunk_output_type: console
 ---
+
+```{r, include = FALSE}
+library(spida2)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, comment='', message = FALSE)
 # library(carEx)
 library(spida2)
 library(magrittr)
@@ -310,7 +318,7 @@ sp2 <- gspline(quintiles, 2, 1) # quadratic spline
 sp3 <- gspline(quintiles, 3, 2) # cubic spline    
 ```
 We can also add a knot at the point of discontinuity coincident with the 2008 crash.
-```{r}
+```{r]}
 quintiles_with_crash <- sort(c(quintiles, toyear(as.Date('2008-12-15'))))
 
 sp2d <- gspline(quintiles_with_crash, 2, c(1,1,-1,1,1))

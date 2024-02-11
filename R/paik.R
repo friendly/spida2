@@ -83,7 +83,6 @@
 #'      ylab = "", yaxt = "n")
 #' paik(am ~ gear + carb, mtcars)
 #' par(op)
-#' @importFrom gplots col2hex
 #' @export 
 paik <- function (formula, data, counts, resp.lvl = 2,  circle.mult = 1, 
     xlab = NULL, ylab = NULL, leg.title = NULL, leg.loc = NULL, 
@@ -126,7 +125,7 @@ paik <- function (formula, data, counts, resp.lvl = 2,  circle.mult = 1,
   }
   
   
-  col <- gplots::col2hex(col)
+  col <- col2hex(col)
   col <- paste0(col,alpha)
   draw.circle <- function (x, y, radius, nv = 100, border = NULL, col, lty = 1, 
                            density = NULL, angle = 45, lwd = 1, alpha = '66') 

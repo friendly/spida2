@@ -31,8 +31,7 @@ Imports:
     naniar,
     UpSetR,
     MASS,
-    Matrix,
-    gplots
+    Matrix
 Suggests: 
     knitr,
     rmarkdown,

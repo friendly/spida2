@@ -466,7 +466,7 @@ debugged <- function(environments=search(), all = FALSE) {
     return(do.call("rbind", lapply(ls(environment.name), function(x) {
       if(is.function(get(x))) {
         is.d <- try(isdebugged(get(x)))
-        if(!(class(is.d)=="try-error")) {
+        if(!(inherits(is.d,"try-error"))) {
           return(data.frame(function.name=x, debugged=is.d))
         } else { return(NULL) }
       }

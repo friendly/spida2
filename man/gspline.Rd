@@ -22,12 +22,13 @@ gspline(
 
 \method{print}{gspline}(
   x,
-  show = c("knots", "degree", "smoothness", "G", "constraint_mat", "estimate_mat")
+  show = c("knots", "degree", "smoothness", "G", "constraint_mat", "estimate_mat"),
+  ...
 )
 
 \method{print}{gspline_matrix}(x, ...)
 
-\method{knots}{gspline}(sp)
+knots.gspline(sp)
 
 Gspline(
   knots,

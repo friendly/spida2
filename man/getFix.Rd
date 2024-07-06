@@ -39,7 +39,7 @@ getFix(fit, ...)
 
 \method{getFix}{mer}(fit, robust = FALSE, ...)
 
-\method{getFix}{zeroinfl}(fit, robust = FALSE...)
+\method{getFix}{zeroinfl}(fit, robust = FALSE, ...)
 
 \method{getFix}{mipo}(fit, robust = FALSE, ...)
 

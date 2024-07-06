@@ -63,7 +63,7 @@ dropLast <- function(arr, drop = FALSE, keep = NULL) {
 #' Drop last elements of an array if it is a "Total"
 #'
 #' Used to drop "Total" rows and columns after using \code{\link{tab}}. Synonyms for
-#' legacy: \code{Tab} and \{pab}.
+#' legacy: \code{Tab} and \code{pab}.
 #'
 #' @param mat a matrix, array or table
 #' @param names_to_drop (default "Total")
@@ -154,7 +154,7 @@ tab.formula <- function( fmla, data = sys.frame(sys.parent()), ... ) tab.data.fr
 #' @describeIn tab method for data frames
 #' @export
 tab.data.frame <-
-  function (dd, fmla,
+  function (x, fmla,
         total.margins = TRUE,
         useNA = "ifany",
         pct = NULL, pr = NULL,
@@ -163,20 +163,20 @@ tab.data.frame <-
         na.rm = NULL,
         all.label = "All", 
         simulate = FALSE,
-        B = 2000)
+        B = 2000, ...)
 {
   # GM: 2014 08 22: modified handling of lhs to fix bug when variable in lhs
   #                 also appears in rhs
   if (missing(fmla)) {
-    fmla <- parse(text = paste(c("~",paste(names(dd),collapse="+"))))
+    fmla <- parse(text = paste(c("~",paste(names(x),collapse="+"))))
     fmla <- eval(fmla)
     environment(fmla) <- parent.frame()
   }
   if (is.null(weights) && (length(fmla) >2 )) {
-    weights <- model.frame(fmla[-3], dd, na.action = NULL)[[1]]
-    xx <- model.frame(fmla[-2], dd, na.action = NULL)
+    weights <- model.frame(fmla[-3], x, na.action = NULL)[[1]]
+    xx <- model.frame(fmla[-2], x, na.action = NULL)
   } else {
-    xx = model.frame(fmla, dd, na.action = NULL)
+    xx = model.frame(fmla, x, na.action = NULL)
     #weights <- eval(substitute(weights), dd, environment(fmla))  # so weights is evaluated in parent.frame
   }
   if(!is.null(weights) && any(is.na(weights))) {

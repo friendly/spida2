@@ -4,12 +4,12 @@
 \alias{print.cat}
 \title{Print method for 'cat' objects}
 \usage{
-\method{print}{cat}(object, ...)
+\method{print}{cat}(x, ...)
 }
 \arguments{
-\item{\dots}{unused arguments}
-
 \item{x}{a cat object to be printed with \code{\link{cat}}}
+
+\item{\dots}{unused arguments}
 }
 \value{
 invisible(x)

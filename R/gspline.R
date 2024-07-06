@@ -720,7 +720,8 @@ gspline <- function(
 #' @rdname gspline
 #' @export
 print.gspline <- function(x, 
-                          show = c('knots','degree','smoothness','G','constraint_mat','estimate_mat')) {
+                          show = c('knots','degree','smoothness','G','constraint_mat','estimate_mat'),
+                          ...) {
   cat('Spline function created by gspline\n')
   ret <- (Filter(Negate(is.function),  sapply(ls(environment(x)), get, environment(x))))
   ret <- lapply(ret, function(x) if(is.numeric(x)) zapsmall(x) else x)

@@ -630,7 +630,7 @@ xqplot <- function(x,
   ##    maxlab is maximum number of labels
   # Turn matrices into variables:
   x <- as.data.frame(x)
-  if (any (sapply(x, class) == 'matrix')) {
+  if (any (sapply(x, inherits, 'matrix'))) {
     zz <- list()
     for (ii in seq_along(x)) {
       if (is.matrix(x[[ii]])) {

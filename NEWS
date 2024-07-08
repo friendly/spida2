@@ -1,5 +1,6 @@
 0.2.2
 
+* changed knots.gspline to knots_.gspline to avoid conflict with stats::knots
 * fixed gplots problem
 
 2023-08-10

@@ -737,7 +737,7 @@ print.gspline_matrix <- function(x, ...) {
 }
 #' @rdname gspline
 #' @export
-knots.gspline <- function(sp) {
+knots_.gspline <- function(sp) {
   environment(sp)$knots
 }
 if(FALSE) {

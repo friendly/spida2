@@ -340,8 +340,6 @@ lchol <- function(x) {
   ret[rind,][,rind]
 }
 #' Cartesian product of variable values for prediction
-#'
-#' Prediction data frame to caompute predicted values
 #' 
 #' Plotting predicted values for a model often requires computing
 #' predicted values on a grid of predictor values other than the
@@ -441,18 +439,22 @@ lchol <- function(x) {
 #' p + xyplot(fit1 ~ ses | id, pred1, type = 'l')    
 #' @export
 pred.grid <-function (...) {
+  # GM 2024-07-08: modified to keep contrasts for factors
   nams <- as.character(as.list(substitute(list(...)))[-1L])
   x <- list(...)
   if (is.null(names(x))) 
     names(x) <- nams
   else if (any(names(x) == "")) 
     names(x)[names(x) == ""] <- nams[names(x) == ""]
-  ret <- lapply(x, unique)
-  ret <- lapply(ret, sort)
-  ret <- do.call(expand.grid, c(ret, stringsAsFactors = FALSE))
-  for(nn in names(ret)){
-    if(is.factor(ret[[nn]])) contrasts(ret[[nn]]) <- contrasts(x[[nn]])
+  uniq <- function(x) {
+    # seems to preserve contrasts, etc. for factors
+    # but keeps only unique values of numerical and other inputs
+    x <- sort(x)
+    ind <- c(1, diff(as.numeric(factor(x))))
+    x[ind == 1]
   }
+  x <- lapply(x, uniq)
+  ret <- do.call(expand.grid, c(x, stringsAsFactors = FALSE))
   ret
 }
 #' List debugged functions

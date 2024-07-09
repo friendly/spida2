@@ -1,4 +1,3 @@
-inst/doc
 # History files
 .Rhistory
 .Rapp.history
@@ -28,4 +27,3 @@ vignettes/*.pdf
 rsconnect/
 .Rproj.user
 # scraps
-docs

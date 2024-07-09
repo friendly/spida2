@@ -1,5 +1,6 @@
 0.2.2
 
+* improved pred.grid to better handle factors with special contrasts
 * changed knots.gspline to knots_.gspline to avoid conflict with stats::knots
 * fixed gplots problem
 

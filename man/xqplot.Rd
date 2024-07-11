@@ -2,9 +2,31 @@
 % Please edit documentation in R/graphics.R
 \name{xqplot}
 \alias{xqplot}
+\alias{xqplot_}
 \title{Extended Quantile Plots}
 \usage{
 xqplot(
+  x,
+  ptype = "quantile",
+  labels = dimnames(x)[[2]],
+  ...,
+  mfrow = findmfrow(ncol(x)),
+  ask = FALSE,
+  mcex = 0.8,
+  maxlab = 12,
+  debug = F,
+  mar = c(4, 2.5, 4, 1),
+  xlab.pos = 2,
+  xlab.cex = 0.7,
+  sublab.pos = xlab.pos + xlab.cex * 1.15,
+  text.cex.factor = 1,
+  left.labs = F,
+  class = TRUE,
+  xaxs = "i",
+  maxvarnamelength = 20
+)
+
+xqplot_(
   x,
   ptype = "quantile",
   labels = dimnames(x)[[2]],
@@ -72,6 +94,11 @@ plot for numerical varibles and barcharts for factors. Quantile plots also
 show a horizontal line at the position of the mean and at mean plus or minus
 one standard deviation.
 }
+\section{Functions}{
+\itemize{
+\item \code{xqplot_()}: experimental version to handle data.frames with list elements
+
+}}
 \note{
 Bugs:
 'mfrow' should take the total number of variables into account if they will

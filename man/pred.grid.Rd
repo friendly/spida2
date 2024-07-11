@@ -17,9 +17,6 @@ create a data frame whose rows are the Cartesian product of the
 unique values of the input. See comments on usage in the examples.}
 }
 \description{
-Prediction data frame to caompute predicted values
-}
-\details{
 Plotting predicted values for a model often requires computing
 predicted values on a grid of predictor values other than the
 original data set. Categorical variables (character or factor)

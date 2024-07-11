@@ -1,6 +1,6 @@
 0.2.2
 
-* xqplot: avoided otiose call to as.data.frame to avoid problem with data.frame that contain lists 
+* xqplot_: experimental modified xqplot to work with data frames containing list elements 
 * improved pred.grid to better handle factors with special contrasts
 * changed knots.gspline to knots_.gspline to avoid conflict with stats::knots
 * fixed gplots problem

@@ -121,5 +121,4 @@
 #' \item \code{\link[spida2]{sub_}} and \code{\link[spida2]{gsub_}} handle substitution in a pipeline and return a factor if the input is a factor. 
 #' \item \code{\link[spida2]{name}} changes the names of an object and returns the renamed object 
 #' }
-#' @name spida2
-NULL
+"_PACKAGE"

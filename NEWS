@@ -1,3 +1,7 @@
+0.2.3
+
+* tps_: add 'cols' to change superpose.symbol, .line, .polygon
+
 0.2.2
 
 * xqplot_: experimental modified xqplot to work with data frames containing list elements 

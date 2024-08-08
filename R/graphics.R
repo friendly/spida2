@@ -390,7 +390,7 @@ tps <- function (...)
   trellis.par.set(theme=theme)
   invisible(old_theme)
 }
-#' @describeIn td trellis par set for all parameters, special treatment for col, lwd, lty, pch, padding
+#' @describeIn td trellis par set for all parameters, special treatment for cols, lwd, lty, pch, padding
 #' @export
 tps_ <- function (...)
 {
@@ -407,6 +407,13 @@ tps_ <- function (...)
            'col' = {
              theme$plot.line$col <- args[[i]]
              theme$plot.symbol$col <- args[[i]]
+           }, 
+           'cols' = {
+             theme$plot.line$col <- args[[i]]
+             theme$plot.symbol$col <- args[[i]]
+             theme$superpose.symbol$col <- args[[i]]
+             theme$superpose.line$col <- args[[i]]
+             theme$superpose.polygon$col <- args[[i]]
            }, 
            'symbol_col' = {
              

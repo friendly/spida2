@@ -29,9 +29,9 @@ xqplot(
 xqplot_(
   x,
   ptype = "quantile",
-  labels = dimnames(x)[[2]],
+  labels = names(x),
   ...,
-  mfrow = findmfrow(ncol(x)),
+  mfrow = findmfrow(length(x)),
   ask = FALSE,
   mcex = 0.8,
   maxlab = 12,
